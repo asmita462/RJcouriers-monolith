@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Shipment Status</title>
+</head>
+<body>
+    <h2>✏️ Update Shipment Status</h2>
+    <form method="POST">
+        <label>Tracking ID:</label>
+        <input type="text" name="track_id" required><br><br>
+        <label>New Status:</label>
+        <select name="status">
+            <option value="Pending">Pending</option>
+            <option value="In Transit">In Transit</option>
+            <option value="Delivered">Delivered</option>
+        </select><br><br>
+        <button type="submit">Update</button>
+    </form>
+
+    {% if updated %}
+    <h3>✅ Shipment Updated</h3>
+    <p><strong>ID:</strong> {{ updated[0] }}</p>
+    <p><strong>Status:</strong> {{ updated[4] }}</p>
+    {% elif updated is not none %}
+    <p style="color:red;">❌ No shipment found with that ID.</p>
+    {% endif %}
+</body>
+</html>

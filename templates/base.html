@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>RJ Couriers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="logo">🚚 RJ Couriers</div>
+        <a href="/">Home</a>
+        <a href="/create">Book Delivery</a>
+        <a href="/track">Track</a>
+        <a href="/view">View</a>
+        <a href="/update">Update</a>
+        <a href="/payment">Payment</a>
+    </nav>
+
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        © 2025 RJ Couriers | Fast & Reliable Courier Services
+    </footer>
+</body>
+</html>

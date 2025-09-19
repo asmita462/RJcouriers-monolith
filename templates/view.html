@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Shipments</title>
+    <style>
+        body {
+            background-color: #fdf6ff;
+            font-family: 'Segoe UI', sans-serif;
+            padding: 30px;
+        }
+        h2 {
+            color: #6a4c93;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #ffffff;
+        }
+        th, td {
+            border: 1px solid #dcdcdc;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #e0c3fc;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f3eaff;
+        }
+    </style>
+</head>
+<body>
+    <h2>📋 All Shipments</h2>
+    {% if shipments %}
+    <table>
+        <tr>
+            <th>#</th>
+            <th>Pickup</th>
+            <th>Delivery</th>
+            <th>Weight</th>
+            <th>Status</th>
+            <th>Amount</th>
+            <th>Payment</th>
+        </tr>
+        {% for shipment in shipments %}
+        <tr>
+            <td>{{ shipment[0] }}</td>
+            <td>{{ shipment[1] }}</td>
+            <td>{{ shipment[2] }}</td>
+            <td>{{ shipment[3] }} kg</td>
+            <td>{{ shipment[4] }}</td>
+            <td>₹{{ shipment[5] }}</td>
+            <td>{{ shipment[6] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p>No shipments found yet. Try booking one!</p>
+    {% endif %}
+</body>
+</html>

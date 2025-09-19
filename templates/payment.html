@@ -1,0 +1,17 @@
+<h2>💳 Payment Details</h2>
+<form method="POST">
+    <label>Tracking ID:</label>
+    <input type="text" name="track_id" required>
+
+    <label>Amount (₹):</label>
+    <input type="number" name="amount" required>
+
+    <label>Payment Method:</label>
+    <select name="method">
+        <option value="UPI">UPI</option>
+        <option value="Credit Card">Credit Card</option>
+        <option value="Cash on Pickup">Cash on Pickup</option>
+    </select>
+
+    <button type="submit">💰 Pay Now</button>
+</form>

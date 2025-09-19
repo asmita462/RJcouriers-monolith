@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>🚚 Book Your Delivery</h2>
+<form method="POST">
+    <label>Sender Name:</label>
+    <input type="text" name="sender" required>
+
+    <label>Receiver Name:</label>
+    <input type="text" name="receiver" required>
+
+    <label>Pickup Address:</label>
+    <input type="text" name="pickup" required>
+
+    <label>Delivery Address:</label>
+    <input type="text" name="delivery" required>
+
+    <label>Weight (kg):</label>
+    <input type="number" name="weight" required>
+
+    <label>Amount (₹):</label>
+    <input type="number" name="amount" required>
+<label>Payment Method:</label>
+<select name="payment" required>
+    <option value="UPI">UPI</option>
+    <option value="Credit Card">Credit Card</option>
+    <option value="Cash on Pickup">Cash on Pickup</option>
+</select>
+
+    <button type="submit">✅ Confirm Booking</button>
+</form>
+{% endblock %}
